@@ -52,34 +52,29 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[var(--color-silver)]/85"
         >
-          <span className="eyebrow">Detailing Studio · Kościelec</span>
+          <span className="eyebrow">Detailing Studio</span>
           <span className="h-px w-8 bg-[var(--color-silver)]/30" aria-hidden="true" />
-          <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-accent)]">
-            Twoje Auto. Nasza Pasja.
-          </span>
+          <span className="eyebrow">Kościelec · Wielkopolska</span>
         </motion.div>
 
-        {/* Main headline */}
+        {/* Main headline — brand slogan */}
         <div className="mt-auto pt-16 sm:pt-20 lg:pt-24">
           <h1 className="text-display-xl text-[var(--color-bone)] max-w-[14ch]">
-            <RevealLine delay={0.3}>Detailing,</RevealLine>
-            <RevealLine delay={0.5}>
-              <span className="italic-display text-[var(--color-silver)]">który widać</span>
-            </RevealLine>
-            <RevealLine delay={0.7}>
-              i który <span className="text-[var(--color-accent)]">trwa.</span>
+            <RevealLine delay={0.3}>Twoje Auto.</RevealLine>
+            <RevealLine delay={0.55}>
+              <span className="italic-display text-[var(--color-accent)]">Nasza Pasja.</span>
             </RevealLine>
           </h1>
 
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.0, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 max-w-md text-[var(--color-silver)]/85 text-base sm:text-lg leading-relaxed"
+            transition={{ duration: 0.9, delay: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-8 max-w-xl text-[var(--color-silver)]/85 text-base sm:text-lg leading-relaxed"
           >
-            Profesjonalne studio detailingu w Kościelcu. Korekta lakieru,
-            powłoki ceramiczne, detailing wnętrza — wykonane z dbałością o
-            każdy detal.
+            Profesjonalne studio detailingu w Kościelcu — korekta lakieru, powłoki
+            ceramiczne, detailing wnętrza. Każdy detal wykonany z pasją do najmniejszego
+            szczegółu.
           </motion.p>
 
           <motion.div
@@ -147,7 +142,7 @@ function RevealLine({ children, delay }: { children: React.ReactNode; delay: num
   const reduce = useReducedMotion();
   if (reduce) return <span className="block">{children}</span>;
   return (
-    <span className="block overflow-hidden pb-[0.05em]">
+    <span className="block overflow-hidden pb-[0.22em] -mb-[0.18em]">
       <motion.span
         className="block"
         initial={{ y: "110%" }}

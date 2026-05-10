@@ -40,14 +40,11 @@ export function Manifesto() {
                       "linear-gradient(180deg, transparent 40%, rgba(5,5,5,0.85) 100%)",
                   }}
                 />
-                <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 text-[var(--color-bone)]">
-                  <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--color-accent)]">
-                    Hasło firmowe
-                  </span>
+                <div className="absolute bottom-6 left-6 right-6 text-[var(--color-bone)]">
                   <p className="font-display italic-display text-3xl sm:text-4xl leading-[1.05]">
                     Twoje Auto.
                     <br />
-                    Nasza Pasja.
+                    <span className="text-[var(--color-accent)]">Nasza Pasja.</span>
                   </p>
                 </div>
               </div>
