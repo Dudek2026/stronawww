@@ -49,10 +49,12 @@ export function Navigation() {
           <Image
             src="/logo/dudek-white.png"
             alt=""
-            width={140}
-            height={40}
+            width={1999}
+            height={1518}
             priority
-            className="h-9 w-auto sm:h-10 transition-opacity group-hover:opacity-80"
+            sizes="140px"
+            style={{ width: "auto" }}
+            className="h-9 sm:h-10 transition-opacity group-hover:opacity-80"
           />
           <span className="sr-only">DUDEK Car Studio</span>
         </a>

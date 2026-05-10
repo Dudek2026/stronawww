@@ -50,11 +50,13 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: -10 }}
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[var(--color-silver)]/80"
+          className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[var(--color-silver)]/85"
         >
-          <span className="eyebrow">Detailing Studio</span>
+          <span className="eyebrow">Detailing Studio · Kościelec</span>
           <span className="h-px w-8 bg-[var(--color-silver)]/30" aria-hidden="true" />
-          <span className="numeric-tag">Kościelec · 2024 — ∞</span>
+          <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--color-accent)]">
+            Twoje Auto. Nasza Pasja.
+          </span>
         </motion.div>
 
         {/* Main headline */}

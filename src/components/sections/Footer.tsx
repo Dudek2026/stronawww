@@ -26,7 +26,15 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-[var(--color-iron)] bg-[var(--color-graphite)] overflow-hidden">
-      <div className="absolute inset-0 hex-grid opacity-30" aria-hidden="true" />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        aria-hidden="true"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(200,204,208,1) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
       <Container className="relative pt-20 sm:pt-24 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           {/* Brand */}
@@ -34,9 +42,12 @@ export function Footer() {
             <Image
               src="/logo/dudek-white.png"
               alt="DUDEK Car Studio"
-              width={180}
-              height={50}
-              className="h-12 w-auto"
+              width={1999}
+              height={1518}
+              priority={false}
+              sizes="200px"
+              style={{ height: "auto" }}
+              className="w-44 sm:w-48"
             />
             <p className="text-[var(--color-silver)]/70 text-sm max-w-sm leading-relaxed">
               Profesjonalne studio detailingu samochodowego. Korekta lakieru,

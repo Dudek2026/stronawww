@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -9,23 +10,66 @@ const stats = [
 
 export function Manifesto() {
   return (
-    <section id="manifesto" className="relative py-28 sm:py-36 lg:py-44">
+    <section id="manifesto" className="relative py-24 sm:py-32 lg:py-44">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-iron)] to-transparent" />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-14 gap-x-12">
-          <div className="lg:col-span-5">
+          {/* Left column — visual + meta */}
+          <div className="lg:col-span-5 flex flex-col gap-10">
             <Reveal>
               <div className="flex items-center gap-4 text-[var(--color-mute)]">
                 <span className="numeric-tag">01 / Manifest</span>
                 <span className="h-px w-10 bg-[var(--color-iron)]" aria-hidden="true" />
               </div>
             </Reveal>
+
             <Reveal delay={0.05}>
-              <p className="mt-6 font-mono text-xs uppercase tracking-[0.22em] text-[var(--color-silver)]/70">
-                Twoje Auto. Nasza Pasja.
-              </p>
+              <div className="relative aspect-[4/5] overflow-hidden border border-[var(--color-iron)] max-w-md">
+                <Image
+                  src="/images/02.jpg"
+                  alt="Czarne auto w studiu DUDEK Car Studio z heksagonalnym oświetleniem LED"
+                  fill
+                  sizes="(min-width: 1024px) 35vw, 100vw"
+                  className="object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  aria-hidden="true"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, transparent 40%, rgba(5,5,5,0.85) 100%)",
+                  }}
+                />
+                <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 text-[var(--color-bone)]">
+                  <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--color-accent)]">
+                    Hasło firmowe
+                  </span>
+                  <p className="font-display italic-display text-3xl sm:text-4xl leading-[1.05]">
+                    Twoje Auto.
+                    <br />
+                    Nasza Pasja.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <div className="flex items-start gap-3 max-w-md">
+                <span
+                  className="font-display text-5xl text-[var(--color-accent)] leading-none"
+                  aria-hidden="true"
+                >
+                  „
+                </span>
+                <p className="text-[var(--color-silver)]/70 text-sm leading-relaxed pt-2">
+                  Każde auto traktujemy indywidualnie — od pierwszego kontaktu po
+                  ostatni etap pracy.
+                </p>
+              </div>
             </Reveal>
           </div>
+
+          {/* Right column — manifesto copy + stats */}
           <div className="lg:col-span-7 lg:col-start-6">
             <Reveal delay={0.1}>
               <h2 className="text-display-lg text-[var(--color-bone)]">

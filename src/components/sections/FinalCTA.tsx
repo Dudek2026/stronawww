@@ -94,84 +94,30 @@ export function FinalCTA() {
           </Reveal>
 
           <Reveal className="lg:col-span-7" delay={0.25}>
-            <a
-              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${contact.address.street}, ${contact.address.postal} ${contact.address.city}`)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block aspect-[4/3] lg:aspect-auto lg:h-full min-h-[420px] border border-[var(--color-iron)] overflow-hidden bg-[var(--color-graphite)] hover:border-[var(--color-accent)]/60 transition-colors"
-              aria-label={`Otwórz nawigację do ${contact.brand}`}
-            >
-              {/* Stylized "map" — radial dot grid + glowing pin */}
-              <div className="absolute inset-0 hex-grid opacity-60" aria-hidden="true" />
-              <div
-                className="absolute inset-0"
-                aria-hidden="true"
+            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[420px] border border-[var(--color-iron)] overflow-hidden bg-[var(--color-graphite)]">
+              <iframe
+                title={`Mapa — ${contact.brand}, ${contact.address.street}, ${contact.address.city}`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(`DUDEK Car Studio, ${contact.address.street}, ${contact.address.postal} ${contact.address.city}`)}&output=embed`}
+                className="absolute inset-0 w-full h-full"
                 style={{
-                  backgroundImage:
-                    "radial-gradient(rgba(200,204,208,0.06) 1px, transparent 1px)",
-                  backgroundSize: "24px 24px",
+                  border: 0,
+                  filter: "grayscale(0.4) contrast(1.05) brightness(0.85)",
                 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
               />
-              <div
-                className="absolute inset-0"
-                aria-hidden="true"
-                style={{
-                  background:
-                    "radial-gradient(50% 60% at 50% 50%, rgba(31,184,206,0.16) 0%, transparent 70%)",
-                }}
-              />
-
-              {/* Diagonal road lines */}
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 800 600"
-                className="absolute inset-0 w-full h-full opacity-30"
-                preserveAspectRatio="none"
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${contact.address.street}, ${contact.address.postal} ${contact.address.city}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group absolute bottom-4 right-4 inline-flex items-center gap-2 bg-[var(--color-ink)]/90 backdrop-blur-md border border-[var(--color-iron)] hover:border-[var(--color-accent)] text-[var(--color-silver)] hover:text-[var(--color-accent)] font-mono text-[0.7rem] uppercase tracking-[0.22em] px-4 py-2.5 transition-colors"
+                aria-label="Otwórz nawigację do studia w Google Maps"
               >
-                <line x1="0" y1="120" x2="800" y2="380" stroke="rgba(200,204,208,0.18)" strokeWidth="1" />
-                <line x1="0" y1="420" x2="800" y2="180" stroke="rgba(200,204,208,0.12)" strokeWidth="1" />
-                <line x1="200" y1="0" x2="540" y2="600" stroke="rgba(200,204,208,0.10)" strokeWidth="1" />
-              </svg>
-
-              {/* Pin */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3">
-                <span
-                  className="absolute -inset-12 rounded-full"
-                  aria-hidden="true"
-                  style={{
-                    background: "radial-gradient(circle, rgba(31,184,206,0.35) 0%, transparent 70%)",
-                  }}
-                />
-                <span
-                  className="relative inline-flex h-3 w-3 rounded-full bg-[var(--color-accent)]"
-                  aria-hidden="true"
-                >
-                  <span className="absolute -inset-2 rounded-full border border-[var(--color-accent)]/50 animate-ping" />
-                </span>
-              </div>
-
-              {/* Address card */}
-              <div className="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8 flex flex-col gap-3 border border-[var(--color-iron)] bg-[var(--color-ink)]/85 backdrop-blur-md p-5 sm:p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="eyebrow mb-2">Lokalizacja</p>
-                    <p className="font-display text-xl sm:text-2xl text-[var(--color-bone)] leading-tight">
-                      {contact.address.street}
-                      <br />
-                      {contact.address.postal} {contact.address.city}
-                    </p>
-                  </div>
-                  <ArrowUpRight
-                    className="h-5 w-5 text-[var(--color-mute)] group-hover:text-[var(--color-accent)] transition-colors mt-1"
-                    strokeWidth={1.25}
-                    aria-hidden="true"
-                  />
-                </div>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--color-accent)]">
-                  Otwórz w Google Maps →
-                </p>
-              </div>
-            </a>
+                <span>Wyznacz trasę</span>
+                <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
+              </a>
+            </div>
           </Reveal>
         </div>
       </Container>

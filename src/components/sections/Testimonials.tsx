@@ -56,15 +56,14 @@ export function Testimonials() {
           </Reveal>
         </div>
 
-        {/* Testimonials grid */}
-        <div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--color-iron)] border border-[var(--color-iron)]">
+        {/* Testimonials grid — individual borders, no empty gray cells */}
+        <div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {testimonials.map((t, idx) => (
             <Reveal
               key={t.id}
               delay={Math.min(idx * 0.05, 0.4)}
-              className="bg-[var(--color-ink)]"
             >
-              <article className="flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10">
+              <article className="flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] hover:border-[var(--color-accent)]/30 transition-colors">
                 <div className="flex items-center gap-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star

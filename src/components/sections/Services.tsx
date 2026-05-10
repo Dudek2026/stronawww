@@ -57,10 +57,10 @@ export function Services() {
           </div>
         </Reveal>
 
-        {/* Service grid */}
-        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--color-iron)] border border-[var(--color-iron)]">
+        {/* Service grid — individual borders, no empty gray cells */}
+        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {filtered.map((s, idx) => (
-            <li key={s.id} className="bg-[var(--color-ink)]">
+            <li key={s.id}>
               <Reveal delay={Math.min(idx * 0.04, 0.32)} y={20}>
                 <ServiceTile
                   number={s.number}
@@ -119,8 +119,8 @@ function ServiceTile({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 transition-colors duration-500",
-        "hover:bg-[var(--color-graphite)]",
+        "group relative flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] transition-colors duration-500",
+        "hover:bg-[var(--color-graphite)] hover:border-[var(--color-accent)]/40",
         comingSoon && "opacity-70",
       )}
     >
