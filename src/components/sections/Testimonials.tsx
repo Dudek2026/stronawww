@@ -1,0 +1,97 @@
+import { ArrowUpRight, Star } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/motion/Reveal";
+import { testimonials } from "@/data/testimonials";
+import { contact } from "@/data/contact";
+
+export function Testimonials() {
+  return (
+    <section
+      id="opinie"
+      className="relative py-28 sm:py-36 lg:py-44 overflow-hidden"
+    >
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 gap-x-12">
+          <div className="lg:col-span-5">
+            <Reveal>
+              <SectionHeading
+                index="06 / Opinie"
+                eyebrow="Klienci o nas"
+                title="Cyfry,"
+                italic="które mówią same za siebie."
+              />
+            </Reveal>
+          </div>
+
+          <Reveal className="lg:col-span-7" delay={0.1}>
+            <div className="border border-[var(--color-iron)] bg-[var(--color-graphite)] p-8 sm:p-10 lg:p-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-1">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 fill-[var(--color-accent)] text-[var(--color-accent)]"
+                      strokeWidth={0}
+                    />
+                  ))}
+                </div>
+                <p className="font-display text-5xl sm:text-6xl text-[var(--color-bone)] leading-none">
+                  {contact.rating.value} / 5
+                </p>
+                <p className="font-mono text-xs uppercase tracking-[0.22em] text-[var(--color-silver)]/70">
+                  {contact.rating.count} opinii w {contact.rating.source}
+                </p>
+              </div>
+              <a
+                href={contact.social.googleProfile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-[var(--color-silver)] hover:text-[var(--color-accent)] transition-colors"
+              >
+                Zobacz na Google
+                <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Testimonials grid */}
+        <div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--color-iron)] border border-[var(--color-iron)]">
+          {testimonials.map((t, idx) => (
+            <Reveal
+              key={t.id}
+              delay={Math.min(idx * 0.05, 0.4)}
+              className="bg-[var(--color-ink)]"
+            >
+              <article className="flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10">
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-3.5 w-3.5 fill-[var(--color-accent)] text-[var(--color-accent)]"
+                      strokeWidth={0}
+                    />
+                  ))}
+                </div>
+
+                <p className="text-[var(--color-silver)]/85 text-base leading-relaxed">
+                  „{t.body}"
+                </p>
+
+                <div className="mt-auto pt-6 border-t border-[var(--color-iron)] flex items-center justify-between">
+                  <p className="font-display text-lg text-[var(--color-bone)]">
+                    {t.author}
+                  </p>
+                  <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-[var(--color-mute)]">
+                    {t.age}
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
