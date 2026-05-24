@@ -15,8 +15,16 @@ export function Services() {
     active === "wszystko" ? services : services.filter((s) => s.category === active);
 
   return (
-    <section id="uslugi" className="relative py-28 sm:py-36 lg:py-44">
-      <Container>
+    <section id="uslugi" className="relative py-28 sm:py-36 lg:py-44 overflow-hidden">
+      <div
+        className="absolute inset-x-0 top-0 h-[35%] pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background:
+            "radial-gradient(70% 100% at 50% 0%, rgba(31, 184, 206, 0.07) 0%, transparent 60%)",
+        }}
+      />
+      <Container className="relative">
         <Reveal>
           <SectionHeading
             index="02 / Usługi"
@@ -119,13 +127,13 @@ function ServiceTile({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] transition-colors duration-500",
-        "hover:bg-[var(--color-graphite)] hover:border-[var(--color-accent)]/40",
+        "group relative flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] transition-all duration-500",
+        "hover:bg-[var(--color-graphite)] hover:border-[var(--color-accent)]/70 hover:shadow-[0_0_30px_rgba(31,184,206,0.08)]",
         comingSoon && "opacity-70",
       )}
     >
       <div className="flex items-start justify-between">
-        <span className="numeric-tag text-[var(--color-mute)]">{number}</span>
+        <span className="font-mono text-xs tracking-[0.18em] text-[var(--color-accent)] tabular-nums">{number}</span>
         {comingSoon ? (
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--color-accent)] border border-[var(--color-accent)]/40 px-2 py-1">
             Wkrótce

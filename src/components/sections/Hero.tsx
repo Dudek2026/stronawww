@@ -57,8 +57,10 @@ export function Hero() {
           <span className="eyebrow">Kościelec · Wielkopolska</span>
         </motion.div>
 
-        {/* Main headline — brand slogan */}
-        <div className="mt-auto pt-16 sm:pt-20 lg:pt-24">
+        {/* Two-column row: headline left, big logo right */}
+        <div className="mt-auto pt-16 sm:pt-20 lg:pt-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left — headline + copy + CTAs */}
+          <div className="lg:col-span-7">
           <h1 className="text-display-xl text-[var(--color-bone)] max-w-[14ch]">
             <RevealLine delay={0.3}>Twoje Auto.</RevealLine>
             <RevealLine delay={0.55}>
@@ -85,7 +87,7 @@ export function Hero() {
           >
             <a
               href={`tel:${contact.phoneE164}`}
-              className="group inline-flex items-center justify-center gap-3 bg-[var(--color-bone)] text-[var(--color-ink)] px-7 py-4 font-mono text-[0.78rem] uppercase tracking-[0.24em] transition-all hover:bg-[var(--color-accent)] hover:tracking-[0.28em]"
+              className="group relative inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] text-[var(--color-ink)] px-7 py-4 font-mono text-[0.78rem] uppercase tracking-[0.24em] transition-all hover:bg-[var(--color-bone)] hover:tracking-[0.28em] shadow-[0_0_40px_rgba(31,184,206,0.32)]"
             >
               <Phone className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
               <span>Umów wizytę</span>
@@ -97,6 +99,26 @@ export function Hero() {
               <span>Zobacz usługi</span>
               <ArrowDown className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
             </a>
+          </motion.div>
+          </div>
+
+          {/* Right — big logo */}
+          <motion.div
+            initial={reduce ? false : { opacity: 0, scale: 0.92 }}
+            animate={reduce ? undefined : { opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:flex lg:col-span-5 items-center justify-center"
+          >
+            <Image
+              src="/logo/dudek-white.png"
+              alt="DUDEK Car Studio"
+              width={1999}
+              height={1518}
+              priority
+              sizes="(min-width: 1280px) 420px, 320px"
+              style={{ height: "auto" }}
+              className="w-full max-w-[420px] drop-shadow-[0_12px_40px_rgba(0,0,0,0.55)]"
+            />
           </motion.div>
         </div>
 

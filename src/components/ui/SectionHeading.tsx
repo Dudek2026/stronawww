@@ -15,9 +15,11 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("flex flex-col gap-6", className)}>
-      <div className="flex items-center gap-4 text-[var(--color-mute)]">
-        <span className="numeric-tag">{index}</span>
-        <span className="h-px w-10 bg-[var(--color-iron)]" aria-hidden="true" />
+      <div className="flex items-center gap-4">
+        <span className="font-mono text-xs tracking-[0.18em] text-[var(--color-accent)] tabular-nums">
+          {index}
+        </span>
+        <span className="h-px w-10 bg-[var(--color-accent)]/40" aria-hidden="true" />
         <span className="eyebrow">{eyebrow}</span>
       </div>
       <h2 className="text-display-md text-[var(--color-bone)] max-w-3xl">

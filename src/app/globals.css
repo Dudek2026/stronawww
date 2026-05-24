@@ -104,7 +104,8 @@ body {
   font-size: 0.7rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-mute);
+  color: var(--color-accent);
+  opacity: 0.85;
 }
 
 .numeric-tag {

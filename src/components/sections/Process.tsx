@@ -12,7 +12,7 @@ export function Process() {
       <Container>
         <Reveal>
           <SectionHeading
-            index="05 / Proces"
+            index="07 / Proces"
             eyebrow="Współpraca"
             title="Cztery kroki"
             italic="do nowego życia auta."

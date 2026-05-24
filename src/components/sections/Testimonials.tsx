@@ -11,12 +11,20 @@ export function Testimonials() {
       id="opinie"
       className="relative py-28 sm:py-36 lg:py-44 overflow-hidden"
     >
+      <div
+        className="absolute inset-x-0 top-0 h-[35%] pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background:
+            "radial-gradient(70% 100% at 50% 0%, rgba(31, 184, 206, 0.06) 0%, transparent 60%)",
+        }}
+      />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 gap-x-12">
           <div className="lg:col-span-5">
             <Reveal>
               <SectionHeading
-                index="06 / Opinie"
+                index="08 / Opinie"
                 eyebrow="Klienci o nas"
                 title="Cyfry,"
                 italic="które mówią same za siebie."
@@ -63,7 +71,7 @@ export function Testimonials() {
               key={t.id}
               delay={Math.min(idx * 0.05, 0.4)}
             >
-              <article className="flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] hover:border-[var(--color-accent)]/30 transition-colors">
+              <article className="group flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] hover:border-[var(--color-accent)]/70 hover:shadow-[0_0_30px_rgba(31,184,206,0.08)] transition-all duration-500">
                 <div className="flex items-center gap-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star

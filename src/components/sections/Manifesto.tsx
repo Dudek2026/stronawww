@@ -17,9 +17,11 @@ export function Manifesto() {
           {/* Left column — visual + meta */}
           <div className="lg:col-span-5 flex flex-col gap-10">
             <Reveal>
-              <div className="flex items-center gap-4 text-[var(--color-mute)]">
-                <span className="numeric-tag">01 / Manifest</span>
-                <span className="h-px w-10 bg-[var(--color-iron)]" aria-hidden="true" />
+              <div className="flex items-center gap-4">
+                <span className="font-mono text-xs tracking-[0.18em] text-[var(--color-accent)]">
+                  01 / Manifest
+                </span>
+                <span className="h-px w-10 bg-[var(--color-accent)]/40" aria-hidden="true" />
               </div>
             </Reveal>
 
@@ -96,7 +98,7 @@ export function Manifesto() {
                 {stats.map((s) => (
                   <div key={s.label} className="flex flex-col gap-2">
                     <dt className="eyebrow">{s.label}</dt>
-                    <dd className="font-display text-4xl sm:text-5xl text-[var(--color-bone)] leading-none">
+                    <dd className="font-display text-4xl sm:text-5xl text-[var(--color-accent)] leading-none">
                       {s.value}
                     </dd>
                   </div>

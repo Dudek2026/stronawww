@@ -13,7 +13,7 @@ export function FinalCTA() {
       <Container className="relative">
         <div className="text-center max-w-5xl mx-auto">
           <Reveal>
-            <p className="eyebrow">07 / Kontakt</p>
+            <p className="eyebrow">09 / Kontakt</p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-8 text-display-xl text-[var(--color-bone)]">
@@ -32,7 +32,7 @@ export function FinalCTA() {
             <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href={`tel:${contact.phoneE164}`}
-                className="group inline-flex items-center justify-center gap-3 bg-[var(--color-bone)] text-[var(--color-ink)] px-8 py-5 font-mono text-[0.78rem] uppercase tracking-[0.24em] transition-all hover:bg-[var(--color-accent)] hover:tracking-[0.28em]"
+                className="group inline-flex items-center justify-center gap-3 bg-[var(--color-accent)] text-[var(--color-ink)] px-8 py-5 font-mono text-[0.78rem] uppercase tracking-[0.24em] transition-all hover:bg-[var(--color-bone)] hover:tracking-[0.28em] shadow-[0_0_60px_rgba(31,184,206,0.32)]"
               >
                 <Phone className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
                 <span>{contact.phone}</span>

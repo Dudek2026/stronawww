@@ -27,9 +27,10 @@ export function PillarsMarquee() {
 
 function Spark() {
   return (
-    <span className="relative inline-flex h-2 w-2 shrink-0" aria-hidden="true">
-      <span className="absolute inset-0 rounded-full bg-[var(--color-accent)] opacity-80" />
-      <span className="absolute -inset-2 rounded-full bg-[var(--color-accent)] opacity-20 blur-md" />
+    <span className="relative inline-flex h-3 w-3 shrink-0" aria-hidden="true">
+      <span className="absolute inset-0 rounded-full bg-[var(--color-accent)]" />
+      <span className="absolute -inset-3 rounded-full bg-[var(--color-accent)] opacity-40 blur-md" />
+      <span className="absolute -inset-1 rounded-full border border-[var(--color-accent)]/60" />
     </span>
   );
 }

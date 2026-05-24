@@ -23,11 +23,19 @@ export function Gallery() {
       id="realizacje"
       className="relative py-24 sm:py-32 lg:py-44 overflow-hidden"
     >
+      <div
+        className="absolute inset-x-0 top-0 h-[30%] pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background:
+            "radial-gradient(70% 100% at 50% 0%, rgba(31, 184, 206, 0.06) 0%, transparent 60%)",
+        }}
+      />
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <Reveal>
             <SectionHeading
-              index="04 / Realizacje"
+              index="06 / Realizacje"
               eyebrow="Wybrane prace"
               title="Studio w akcji,"
               italic="auta po zabiegach."

@@ -21,7 +21,7 @@ export function Studio() {
       <Container className="relative">
         <Reveal>
           <SectionHeading
-            index="03 / Studio"
+            index="05 / Studio"
             eyebrow="Przestrzeń pracy"
             title="Zamknięte studio,"
             italic="warunki bez kompromisów."
