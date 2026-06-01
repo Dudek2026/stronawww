@@ -21,7 +21,7 @@ export function Gallery() {
   return (
     <section
       id="realizacje"
-      className="relative py-24 sm:py-32 lg:py-44 overflow-hidden"
+      className="relative py-14 sm:py-24 lg:py-44 overflow-hidden"
     >
       <div
         className="absolute inset-x-0 top-0 h-[30%] pointer-events-none"
@@ -50,11 +50,11 @@ export function Gallery() {
         </div>
 
         {/* CSS columns masonry — naturally handles mixed aspects */}
-        <div className="mt-12 sm:mt-14 columns-1 sm:columns-2 lg:columns-3 gap-3 sm:gap-4 [column-fill:_balance]">
+        <div className="mt-10 sm:mt-14 columns-2 lg:columns-3 gap-2 sm:gap-3 lg:gap-4 [column-fill:_balance]">
           {galleryItems.map((it, idx) => (
             <Reveal
               key={it.id}
-              className="mb-3 sm:mb-4 break-inside-avoid"
+              className="mb-2 sm:mb-3 lg:mb-4 break-inside-avoid"
               delay={Math.min(idx * 0.04, 0.4)}
             >
               <button
@@ -74,11 +74,11 @@ export function Gallery() {
                   className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink)]/65 via-transparent to-transparent opacity-70 transition-opacity group-hover:opacity-100"
                   aria-hidden="true"
                 />
-                <span className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-end justify-between text-[var(--color-bone)]">
-                  <span className="font-mono text-[0.62rem] uppercase tracking-[0.22em] opacity-80">
+                <span className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3 lg:bottom-4 lg:left-4 lg:right-4 flex items-end justify-between text-[var(--color-bone)]">
+                  <span className="hidden sm:inline font-mono text-[0.6rem] sm:text-[0.62rem] uppercase tracking-[0.18em] sm:tracking-[0.22em] opacity-80">
                     {it.category}
                   </span>
-                  <span className="font-mono text-[0.62rem] tabular-nums opacity-70">
+                  <span className="font-mono text-[0.6rem] sm:text-[0.62rem] tabular-nums opacity-70 ml-auto">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
                 </span>

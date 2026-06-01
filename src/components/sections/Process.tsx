@@ -7,7 +7,7 @@ export function Process() {
   return (
     <section
       id="proces"
-      className="relative py-28 sm:py-36 lg:py-44 bg-[var(--color-graphite)] overflow-hidden"
+      className="relative py-16 sm:py-28 lg:py-44 bg-[var(--color-graphite)] overflow-hidden"
     >
       <Container>
         <Reveal>

@@ -15,7 +15,7 @@ export function Services() {
     active === "wszystko" ? services : services.filter((s) => s.category === active);
 
   return (
-    <section id="uslugi" className="relative py-28 sm:py-36 lg:py-44 overflow-hidden">
+    <section id="uslugi" className="relative py-16 sm:py-28 lg:py-44 overflow-hidden">
       <div
         className="absolute inset-x-0 top-0 h-[35%] pointer-events-none"
         aria-hidden="true"
@@ -66,7 +66,7 @@ export function Services() {
         </Reveal>
 
         {/* Service grid — individual borders, no empty gray cells */}
-        <ul className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+        <ul className="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
           {filtered.map((s, idx) => (
             <li key={s.id}>
               <Reveal delay={Math.min(idx * 0.04, 0.32)} y={20}>
@@ -127,7 +127,7 @@ function ServiceTile({
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] transition-all duration-500",
+        "group relative flex h-full flex-col gap-4 lg:gap-6 p-5 sm:p-7 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] transition-all duration-500",
         "hover:bg-[var(--color-graphite)] hover:border-[var(--color-accent)]/70 hover:shadow-[0_0_30px_rgba(31,184,206,0.08)]",
         comingSoon && "opacity-70",
       )}
@@ -147,13 +147,14 @@ function ServiceTile({
         )}
       </div>
 
-      <h3 className="text-2xl sm:text-[1.6rem] font-display text-[var(--color-bone)] leading-[1.1]">
+      <h3 className="text-xl sm:text-2xl lg:text-[1.6rem] font-display text-[var(--color-bone)] leading-[1.1]">
         {title}
       </h3>
 
-      <p className="text-[var(--color-silver)]/70 text-sm leading-relaxed">{short}</p>
+      <p className="text-[var(--color-silver)]/70 text-[0.82rem] sm:text-sm leading-relaxed">{short}</p>
 
-      <p className="text-[var(--color-silver)]/55 text-[0.84rem] leading-relaxed border-t border-[var(--color-iron)] pt-5 mt-auto">
+      {/* Full description: hidden on mobile to compact the list */}
+      <p className="hidden sm:block text-[var(--color-silver)]/55 text-[0.84rem] leading-relaxed border-t border-[var(--color-iron)] pt-5 mt-auto">
         {description}
       </p>
     </article>

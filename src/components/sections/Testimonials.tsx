@@ -9,7 +9,7 @@ export function Testimonials() {
   return (
     <section
       id="opinie"
-      className="relative py-28 sm:py-36 lg:py-44 overflow-hidden"
+      className="relative py-16 sm:py-28 lg:py-44 overflow-hidden"
     >
       <div
         className="absolute inset-x-0 top-0 h-[35%] pointer-events-none"
@@ -65,13 +65,13 @@ export function Testimonials() {
         </div>
 
         {/* Testimonials grid — individual borders, no empty gray cells */}
-        <div className="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+        <div className="mt-12 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {testimonials.map((t, idx) => (
             <Reveal
               key={t.id}
               delay={Math.min(idx * 0.05, 0.4)}
             >
-              <article className="group flex h-full flex-col gap-6 p-7 sm:p-8 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] hover:border-[var(--color-accent)]/70 hover:shadow-[0_0_30px_rgba(31,184,206,0.08)] transition-all duration-500">
+              <article className="group flex h-full flex-col gap-4 sm:gap-6 p-5 sm:p-7 lg:p-10 border border-[var(--color-iron)] bg-[var(--color-ink)] hover:border-[var(--color-accent)]/70 hover:shadow-[0_0_30px_rgba(31,184,206,0.08)] transition-all duration-500">
                 <div className="flex items-center gap-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star

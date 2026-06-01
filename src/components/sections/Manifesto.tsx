@@ -10,7 +10,7 @@ const stats = [
 
 export function Manifesto() {
   return (
-    <section id="manifesto" className="relative py-24 sm:py-32 lg:py-44">
+    <section id="manifesto" className="relative py-14 sm:py-24 lg:py-44">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-iron)] to-transparent" />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-14 gap-x-12">

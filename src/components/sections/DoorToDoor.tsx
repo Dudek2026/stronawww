@@ -10,7 +10,7 @@ export function DoorToDoor() {
   return (
     <section
       id="door-to-door"
-      className="relative py-28 sm:py-36 lg:py-44 overflow-hidden bg-[var(--color-graphite)]"
+      className="relative py-16 sm:py-28 lg:py-44 overflow-hidden bg-[var(--color-graphite)]"
     >
       {/* Decorative — diagonal route line + glow */}
       <div
