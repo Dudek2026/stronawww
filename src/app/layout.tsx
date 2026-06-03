@@ -56,21 +56,14 @@ export const metadata: Metadata = {
     title: "DUDEK Car Studio — Detailing premium · Kościelec",
     description:
       "Profesjonalne studio detailingu samochodowego. Korekta lakieru, powłoki ceramiczne, detailing wnętrza. Twoje Auto. Nasza Pasja.",
-    images: [
-      {
-        url: "/images/IMG_6798a.jpg",
-        width: 1200,
-        height: 800,
-        alt: "DUDEK Car Studio — Porsche Cayenne w studiu detailingowym",
-      },
-    ],
+    // OG image generated automatically by app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
     title: "DUDEK Car Studio — Detailing premium",
     description:
       "Korekta lakieru, powłoki ceramiczne, detailing wnętrza. Kościelec.",
-    images: ["/images/IMG_6798a.jpg"],
+    // Twitter image: Next.js falls back to OG image automatically
   },
   robots: {
     index: true,
